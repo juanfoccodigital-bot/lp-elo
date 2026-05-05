@@ -231,9 +231,10 @@
     }
     .hero h1 {
       font-family: var(--font-headline);
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      font-size: clamp(2.1rem, 5.5vw, 4.5rem);
       font-weight: 300; line-height: 1.08;
       color: var(--off-white); margin-bottom: 24px;
+      text-wrap: balance;
       animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0;
     }
     .hero h1 .gold {
@@ -325,9 +326,10 @@
     }
     .section-title {
       font-family: var(--font-headline);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(1.7rem, 4vw, 3.2rem);
       font-weight: 300; line-height: 1.15;
       letter-spacing: -0.3px; margin-bottom: 20px;
+      text-wrap: balance;
     }
     .section-title .gold {
       background: var(--gradient-gold);
@@ -338,6 +340,7 @@
       font-size: 1.05rem; line-height: 1.7;
       color: rgba(38, 28, 16, 0.6);
       max-width: 560px; font-weight: 300;
+      text-wrap: pretty;
     }
 
     /* ═══ PROBLEMS — com mural de fotos animado ═══ */
@@ -765,23 +768,89 @@
       .ba-arrow.next { right: 16px; }
     }
     @media (max-width: 768px) {
-      section { padding: 80px 0; }
+      section { padding: 72px 0; }
+      .container { padding: 0 20px; }
+      .hero .container { padding-top: 120px; padding-bottom: 80px; }
+      .hero-badge { font-size: 0.7rem; padding: 7px 16px; margin-bottom: 24px; letter-spacing: 1.2px; }
+      .hero-subtitle { font-size: 0.98rem; line-height: 1.65; margin-bottom: 36px; }
+      .section-label { font-size: 0.7rem; letter-spacing: 2.4px; margin-bottom: 14px; }
+      .section-label::before { width: 28px; }
+      .section-subtitle { font-size: 0.95rem; line-height: 1.65; }
       .ba-card { flex: 0 0 calc((100% - 36px) / 2); }
       .ba-strip { gap: 12px; padding: 4px 12px 12px; }
       .ba-arrow.prev { left: 12px; }
       .ba-arrow.next { right: 12px; }
+      .ba-header { margin: 0 auto 40px; }
+      .method-header { margin: 0 auto 56px; }
       .comparison-table { font-size: 0.82rem; }
       .comparison-table-header div,
       .comparison-row div { padding: 14px 16px; }
-      .hero-actions { flex-direction: column; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { justify-content: center; width: 100%; }
+      .footer-links { flex-wrap: wrap; gap: 18px 22px; padding: 0 12px; }
+      .doctor-card { padding: 22px 20px; }
+      .pain-item { gap: 14px; }
+      .pain-item h4 { font-size: 0.98rem; }
+      .pain-item p { font-size: 0.88rem; line-height: 1.6; }
+      .faq-question { font-size: 0.95rem; padding: 22px 0; }
+      .faq-answer-inner { font-size: 0.88rem; line-height: 1.7; }
+      .final-cta .subtitle { font-size: 0.95rem; }
+      .final-cta .btn-primary { font-size: 0.95rem; padding: 18px 32px; }
+      .nav-cta { padding: 10px 18px; font-size: 0.78rem; }
     }
     @media (max-width: 480px) {
+      section { padding: 64px 0; }
+      .container { padding: 0 16px; }
+      .hero .container { padding-top: 110px; padding-bottom: 64px; }
+      .hero h1 { font-size: 1.85rem; line-height: 1.15; }
+      .hero-subtitle { font-size: 0.92rem; }
+      .section-title { font-size: 1.55rem; line-height: 1.2; }
+      .section-subtitle { font-size: 0.9rem; }
       .ba-card { flex: 0 0 calc(100% - 24px); }
-      .ba-strip { padding: 4px 12px 12px; }
-      .ba-arrow { width: 44px; height: 44px; }
-      .ba-arrow.prev { left: 8px; }
-      .ba-arrow.next { right: 8px; }
-      .ticker-item { font-size: 0.75rem; padding: 0 24px; }
+      .ba-strip { padding: 4px 12px 12px; gap: 12px; }
+      .ba-arrow { width: 42px; height: 42px; }
+      .ba-arrow svg { width: 16px; height: 16px; }
+      .ba-arrow.prev { left: 6px; }
+      .ba-arrow.next { right: 6px; }
+      .ba-name { padding: 14px 10px; font-size: 0.85rem; }
+      .ba-name small { font-size: 0.65rem; }
+      .ba-labels span { font-size: 0.6rem; padding: 6px 0; letter-spacing: 1.2px; }
+      .ticker-item { font-size: 0.72rem; padding: 0 22px; gap: 10px; }
+      .btn-primary { padding: 16px 28px; font-size: 0.9rem; }
+      .btn-secondary { padding: 14px 18px; font-size: 0.85rem; }
+      .mural-container { height: 340px; }
+      .pain-item h4 { font-size: 0.95rem; }
+      .pain-item p { font-size: 0.85rem; }
+      .pain-icon { width: 42px; height: 42px; }
+      .pain-icon svg { width: 22px; height: 22px; }
+      .step-number { font-size: 2.5rem; }
+      .step-icon-wrap { width: 56px; height: 56px; }
+      .method-step h3 { font-size: 1.05rem; }
+      .method-step p { font-size: 0.88rem; }
+      .doctor-card h3 { font-size: 1.1rem; }
+      .doctor-card p { font-size: 0.88rem; }
+      .comparison-table { font-size: 0.74rem; }
+      .comparison-table-header div,
+      .comparison-row div { padding: 12px 10px; }
+      .check, .cross { font-size: 0.95rem; margin-right: 4px; }
+      .faq-question { font-size: 0.92rem; }
+      .faq-question .icon { width: 30px; height: 30px; margin-left: 12px; }
+      .faq-answer-inner { font-size: 0.85rem; padding-bottom: 22px; }
+      .final-cta h2 { font-size: 1.7rem; }
+      .final-cta .logo-mark { height: 44px; margin-bottom: 24px; }
+      .final-cta .subtitle { font-size: 0.9rem; margin-bottom: 36px; }
+      .footer { padding: 36px 0; }
+      .footer-logo { width: 100px; }
+      .footer-links a { font-size: 0.78rem; }
+      .footer p { font-size: 0.7rem; }
+      .whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+    }
+    @media (max-width: 360px) {
+      .hero h1 { font-size: 1.65rem; }
+      .section-title { font-size: 1.4rem; }
+      .ticker-item { font-size: 0.68rem; padding: 0 18px; }
     }
   </style>
 </head>
@@ -823,7 +892,7 @@
       </div>
       <h1>Sua gordura facial como <span class="gold">fonte de juventude</span></h1>
       <p class="hero-subtitle">
-        O Metodo ELO utiliza a gordura do seu proprio rosto para devolver volume, contorno e naturalidade. Sem aspecto artificial. Sem "cara de fofao".
+        O Método ELO utiliza a gordura do seu próprio rosto para devolver volume, contorno e naturalidade. Sem aspecto artificial. Sem "cara de fofão".
       </p>
       <div class="hero-actions">
         <a href="https://wa.me/5541999074176?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%20ELO" class="btn-primary" target="_blank">
@@ -831,7 +900,7 @@
           Fale Conosco
         </a>
         <a href="#metodo" class="btn-secondary">
-          Conhecer o Metodo
+          Conhecer o Método
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
         </a>
       </div>
@@ -842,18 +911,18 @@
   <div class="ticker-bar">
     <div class="ticker-track">
       <div class="ticker-item"><span class="sep"></span> +1.000 Vidas Transformadas</div>
-      <div class="ticker-item"><span class="sep"></span> Gordura do Proprio Rosto</div>
+      <div class="ticker-item"><span class="sep"></span> Gordura do Próprio Rosto</div>
       <div class="ticker-item"><span class="sep"></span> 100% Natural</div>
-      <div class="ticker-item"><span class="sep"></span> Celulas-Tronco Regenerativas</div>
+      <div class="ticker-item"><span class="sep"></span> Células-Tronco Regenerativas</div>
       <div class="ticker-item"><span class="sep"></span> Sem Aspecto Artificial</div>
       <div class="ticker-item"><span class="sep"></span> Resultado Progressivo</div>
       <div class="ticker-item"><span class="sep"></span> Curitiba, PR</div>
       <div class="ticker-item"><span class="sep"></span> Dr. Ruy Anderson &amp; Dra. Daiane Ribeiro</div>
       <!-- Duplicate for seamless loop -->
       <div class="ticker-item"><span class="sep"></span> +1.000 Vidas Transformadas</div>
-      <div class="ticker-item"><span class="sep"></span> Gordura do Proprio Rosto</div>
+      <div class="ticker-item"><span class="sep"></span> Gordura do Próprio Rosto</div>
       <div class="ticker-item"><span class="sep"></span> 100% Natural</div>
-      <div class="ticker-item"><span class="sep"></span> Celulas-Tronco Regenerativas</div>
+      <div class="ticker-item"><span class="sep"></span> Células-Tronco Regenerativas</div>
       <div class="ticker-item"><span class="sep"></span> Sem Aspecto Artificial</div>
       <div class="ticker-item"><span class="sep"></span> Resultado Progressivo</div>
       <div class="ticker-item"><span class="sep"></span> Curitiba, PR</div>
@@ -907,10 +976,10 @@
           <div class="mural-overlay"></div>
         </div>
         <div>
-          <div class="section-label reveal">Voce se identifica?</div>
-          <h2 class="section-title reveal reveal-delay-1">O espelho ja nao reflete <span class="gold">quem voce e</span></h2>
+          <div class="section-label reveal">Você se identifica?</div>
+          <h2 class="section-title reveal reveal-delay-1">O espelho já não reflete <span class="gold">quem você é</span></h2>
           <p class="section-subtitle reveal reveal-delay-2" style="margin-bottom: 40px;">
-            Com o tempo, a gordura facial se desloca, criando um rosto que nao traduz sua energia e vitalidade.
+            Com o tempo, a gordura facial se desloca, criando um rosto que não traduz sua energia e vitalidade.
           </p>
           <ul class="pain-list">
             <li class="pain-item reveal reveal-delay-1">
@@ -918,8 +987,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
               </div>
               <div>
-                <h4>Bochechas caidas</h4>
-                <p>A gordura que antes dava volume as macas do rosto desceu, acumulando na mandibula — o efeito "buldogue".</p>
+                <h4>Bochechas caídas</h4>
+                <p>A gordura que antes dava volume às maçãs do rosto desceu, acumulando na mandíbula — o efeito "buldogue".</p>
               </div>
             </li>
             <li class="pain-item reveal reveal-delay-2">
@@ -927,8 +996,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15c.5-.5 1.5-1 4-1s3.5.5 4 1"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
               </div>
               <div>
-                <h4>Canto da boca caido</h4>
-                <p>O "sorriso triste" — cantos da boca invertidos transmitem cansaco, mesmo quando voce esta feliz.</p>
+                <h4>Canto da boca caído</h4>
+                <p>O "sorriso triste" — cantos da boca invertidos transmitem cansaço, mesmo quando você está feliz.</p>
               </div>
             </li>
             <li class="pain-item reveal reveal-delay-3">
@@ -936,8 +1005,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
               <div>
-                <h4>Pescoco sem contorno</h4>
-                <p>Queixo e pescoco se confundem. O angulo jovem da mandibula desapareceu.</p>
+                <h4>Pescoço sem contorno</h4>
+                <p>Queixo e pescoço se confundem. O ângulo jovem da mandíbula desapareceu.</p>
               </div>
             </li>
             <li class="pain-item reveal reveal-delay-4">
@@ -946,7 +1015,7 @@
               </div>
               <div>
                 <h4>Olheiras profundas</h4>
-                <p>O esvaziamento da regiao dos olhos cria sombras que nenhum corretivo disfarça.</p>
+                <p>O esvaziamento da região dos olhos cria sombras que nenhum corretivo disfarça.</p>
               </div>
             </li>
           </ul>
@@ -959,10 +1028,10 @@
   <section class="method" id="metodo">
     <div class="container">
       <div class="method-header">
-        <div class="section-label reveal">O Metodo</div>
-        <h2 class="section-title reveal reveal-delay-1">Como funciona o <span class="gold">Metodo ELO</span></h2>
+        <div class="section-label reveal">O Método</div>
+        <h2 class="section-title reveal reveal-delay-1">Como funciona o <span class="gold">Método ELO</span></h2>
         <p class="section-subtitle reveal reveal-delay-2">
-          Um tratamento que reposiciona a gordura que ja e sua, devolvendo naturalidade sem produtos artificiais.
+          Um tratamento que reposiciona a gordura que já é sua, devolvendo naturalidade sem produtos artificiais.
         </p>
       </div>
       <div class="method-steps">
@@ -1116,18 +1185,18 @@
           <div class="section-label reveal">Seus Especialistas</div>
           <h2 class="section-title reveal reveal-delay-1">Uma dupla dedicada ao seu <span class="gold">rejuvenescimento</span></h2>
           <p class="section-subtitle reveal reveal-delay-2" style="margin-bottom: 32px;">
-            Ciencia e cuidado humano, juntos. Ele traz a tecnica. Ela, o acolhimento.
+            Ciência e cuidado humano, juntos. Ele traz a técnica. Ela, o acolhimento.
           </p>
           <div class="doctor-card reveal reveal-delay-2">
             <div class="role">O Professor</div>
             <h3>Dr. Ruy Anderson</h3>
-            <p>Especialista em rejuvenescimento facial com tecnica propria. Didatico e preciso, utiliza a ciencia por tras da gordura facial para resultados naturais e duradouros.</p>
+            <p>Especialista em rejuvenescimento facial com técnica própria. Didático e preciso, utiliza a ciência por trás da gordura facial para resultados naturais e duradouros.</p>
             <span class="cro">CRO 40079</span>
           </div>
           <div class="doctor-card reveal reveal-delay-3">
             <div class="role">A Cuidadora</div>
             <h3>Dra. Daiane Ribeiro</h3>
-            <p>Responsavel pela experiencia completa. Do primeiro contato ao pos-procedimento, garante seguranca emocional e fisica em cada etapa.</p>
+            <p>Responsável pela experiência completa. Do primeiro contato ao pós-procedimento, garante segurança emocional e física em cada etapa.</p>
             <span class="cro">CRO 40413</span>
           </div>
         </div>
@@ -1140,24 +1209,24 @@
     <div class="container">
       <div class="comparison-header">
         <div class="section-label reveal">Comparativo</div>
-        <h2 class="section-title reveal reveal-delay-1">Por que o Metodo ELO e <span class="gold">diferente?</span></h2>
+        <h2 class="section-title reveal reveal-delay-1">Por que o Método ELO é <span class="gold">diferente?</span></h2>
         <p class="section-subtitle reveal reveal-delay-2">
-          Compare com tratamentos tradicionais e entenda a diferenca.
+          Compare com tratamentos tradicionais e entenda a diferença.
         </p>
       </div>
       <div class="comparison-table reveal">
         <div class="comparison-table-header">
           <div></div>
-          <div>Acido Hialuronico</div>
-          <div>Metodo ELO</div>
+          <div>Ácido Hialurônico</div>
+          <div>Método ELO</div>
         </div>
         <div class="comparison-row">
           <div>Material utilizado</div>
-          <div>Produto sintetico</div>
-          <div><span class="check">&#10003;</span> Sua propria gordura</div>
+          <div>Produto sintético</div>
+          <div><span class="check">&#10003;</span> Sua própria gordura</div>
         </div>
         <div class="comparison-row">
-          <div>Duracao do resultado</div>
+          <div>Duração do resultado</div>
           <div>6 a 12 meses</div>
           <div><span class="check">&#10003;</span> Anos (progressivo)</div>
         </div>
@@ -1168,18 +1237,18 @@
         </div>
         <div class="comparison-row">
           <div>Investimento longo prazo</div>
-          <div>R$ 30k-50k em sessoes</div>
-          <div><span class="check">&#10003;</span> Procedimento unico</div>
+          <div>R$ 30k–50k em sessões</div>
+          <div><span class="check">&#10003;</span> Procedimento único</div>
         </div>
         <div class="comparison-row">
-          <div>Celulas-tronco</div>
-          <div><span class="cross">&#10007;</span> Nao possui</div>
-          <div><span class="check">&#10003;</span> Regeneracao ativa</div>
+          <div>Células-tronco</div>
+          <div><span class="cross">&#10007;</span> Não possui</div>
+          <div><span class="check">&#10003;</span> Regeneração ativa</div>
         </div>
         <div class="comparison-row">
-          <div>Risco de rejeicao</div>
-          <div>Possivel (corpo estranho)</div>
-          <div><span class="check">&#10003;</span> Zero (material proprio)</div>
+          <div>Risco de rejeição</div>
+          <div>Possível (corpo estranho)</div>
+          <div><span class="check">&#10003;</span> Zero (material próprio)</div>
         </div>
       </div>
     </div>
@@ -1189,56 +1258,56 @@
   <section class="faq" id="faq">
     <div class="container">
       <div class="faq-header">
-        <div class="section-label reveal">Duvidas Frequentes</div>
-        <h2 class="section-title reveal reveal-delay-1">Tire suas <span class="gold">duvidas</span></h2>
+        <div class="section-label reveal">Dúvidas Frequentes</div>
+        <h2 class="section-title reveal reveal-delay-1">Tire suas <span class="gold">dúvidas</span></h2>
         <p class="section-subtitle reveal reveal-delay-2">
-          Respostas claras para as perguntas mais comuns sobre o Metodo ELO.
+          Respostas claras para as perguntas mais comuns sobre o Método ELO.
         </p>
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
           <button class="faq-question">
-            O procedimento e seguro?
+            O procedimento é seguro?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Sim. O Metodo ELO utiliza sedacao medicamentosa assistida, onde voce permanece monitorada durante todo o procedimento. Nao e anestesia geral. Voce dorme confortavelmente e acorda renovada, com acompanhamento completo pre e pos-procedimento pela Dra. Daiane.</div>
+            <div class="faq-answer-inner">Sim. O Método ELO utiliza sedação medicamentosa assistida, onde você permanece monitorada durante todo o procedimento. Não é anestesia geral. Você dorme confortavelmente e acorda renovada, com acompanhamento completo pré e pós-procedimento pela Dra. Daiane.</div>
           </div>
         </div>
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-question">
-            Quanto custa o Metodo ELO?
+            Quanto custa o Método ELO?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">O investimento e personalizado. Para comparar: um tratamento com acido hialuronico custa entre R$ 30.000 e R$ 50.000 ao longo dos anos (30 a 50 seringas), com resultado inferior e temporario. O Metodo ELO e um procedimento unico, com resultado definitivo e progressivo.</div>
+            <div class="faq-answer-inner">O investimento é personalizado. Para comparar: um tratamento com ácido hialurônico custa entre R$ 30.000 e R$ 50.000 ao longo dos anos (30 a 50 seringas), com resultado inferior e temporário. O Método ELO é um procedimento único, com resultado definitivo e progressivo.</div>
           </div>
         </div>
         <div class="faq-item reveal reveal-delay-2">
           <button class="faq-question">
-            Vou ficar com aparencia artificial?
+            Vou ficar com aparência artificial?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">De forma alguma. O diferencial do Metodo ELO e a naturalidade. Utilizamos a gordura que ja e do seu rosto — nao e gordura nova, e a mesma que se deslocou. O resultado e harmonioso, sem "cara de fofao" ou aspecto masculinizado.</div>
+            <div class="faq-answer-inner">De forma alguma. O diferencial do Método ELO é a naturalidade. Utilizamos a gordura que já é do seu rosto — não é gordura nova, é a mesma que se deslocou. O resultado é harmonioso, sem "cara de fofão" ou aspecto masculinizado.</div>
           </div>
         </div>
         <div class="faq-item reveal reveal-delay-3">
           <button class="faq-question">
-            Qual a diferenca para o preenchimento comum?
+            Qual a diferença para o preenchimento comum?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">O preenchimento com acido hialuronico insere um produto sintetico e temporario. O Metodo ELO reposiciona sua propria gordura facial, que contem celulas-tronco com capacidade regenerativa. Mais natural, mais duradouro e sem rejeicao.</div>
+            <div class="faq-answer-inner">O preenchimento com ácido hialurônico insere um produto sintético e temporário. O Método ELO reposiciona sua própria gordura facial, que contém células-tronco com capacidade regenerativa. Mais natural, mais duradouro e sem rejeição.</div>
           </div>
         </div>
         <div class="faq-item reveal reveal-delay-4">
           <button class="faq-question">
-            Quanto tempo dura a recuperacao?
+            Quanto tempo dura a recuperação?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">A recuperacao e acompanhada de perto pela Dra. Daiane. Nos primeiros dias ha inchacos naturais que reduzem progressivamente. A maioria retoma atividades leves em poucos dias, e o resultado melhora ao longo das semanas gracas a acao das celulas-tronco.</div>
+            <div class="faq-answer-inner">A recuperação é acompanhada de perto pela Dra. Daiane. Nos primeiros dias há inchaços naturais que reduzem progressivamente. A maioria retoma atividades leves em poucos dias, e o resultado melhora ao longo das semanas graças à ação das células-tronco.</div>
           </div>
         </div>
       </div>
@@ -1251,11 +1320,11 @@
       <img src="assets/images/logo/logo-new.png" alt="ELO Rejuvenescimento Facial" class="logo-mark reveal">
       <h2 class="reveal reveal-delay-1">Redescubra a mulher que o espelho <span class="gold">deveria refletir</span></h2>
       <p class="subtitle reveal reveal-delay-2">
-        Agende sua avaliacao e descubra como o Metodo ELO pode transformar o seu rosto — com naturalidade, ciencia e cuidado.
+        Agende sua avaliação e descubra como o Método ELO pode transformar o seu rosto — com naturalidade, ciência e cuidado.
       </p>
       <a href="https://wa.me/5541999074176?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20do%20M%C3%A9todo%20ELO" class="btn-primary reveal reveal-delay-3" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        Agendar Minha Avaliacao
+        Agendar Minha Avaliação
       </a>
     </div>
   </section>
@@ -1267,9 +1336,9 @@
       <div class="footer-links">
         <a href="https://instagram.com/elo.rejuvenescimentofacial" target="_blank">Instagram</a>
         <a href="https://wa.me/5541999074176" target="_blank">WhatsApp</a>
-        <a href="#metodo">O Metodo</a>
+        <a href="#metodo">O Método</a>
         <a href="#resultados">Resultados</a>
-        <a href="#faq">Duvidas</a>
+        <a href="#faq">Dúvidas</a>
       </div>
       <p>Dr. Ruy Anderson CRO 40079 | Dra. Daiane Ribeiro CRO 40413</p>
       <p style="margin-top: 8px; opacity: 0.6;">Curitiba, PR — Todos os direitos reservados.</p>
